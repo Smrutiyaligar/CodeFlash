@@ -4,6 +4,9 @@ The project is to recognize pencil sketch images which can be helpful in investi
 The application is run using Flask. The images are trained using a celebrity database, and sketch images of the celebrities are uploaded.
 Since this can be used as transfer learning, changing the dataset images will be sufficient for different applications.
 
+# Dataset
+MSRA-CFW: https://www.microsoft.com/en-us/research/project/msra-cfw-data-set-of-celebrity-faces-on-the-web/
+
 # File Information
 maincode.html: Contains the html code for uploading a image. This is connected to the backend in flask.py file.
 
