@@ -28,7 +28,7 @@ app=Flask(__name__)
 
 def get_model():
     global classifier,graph
-    classifier=load_model('games.h5')
+    classifier=load_model('my_model.h5')
     print("loaded")
     graph = tf.get_default_graph()
     
