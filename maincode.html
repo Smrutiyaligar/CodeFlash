@@ -86,43 +86,6 @@ $("#predict-button").hide();
 	<img id="selected-image" src=""/>
 	</div>
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 	<script>
 		let base64image;
@@ -136,7 +99,6 @@ $("#predict-button").hide();
 			}
 			reader.readAsDataURL($("#image-selector")[0].files[0]);
 			$("#1-prediction").text("");
-			$("#2-prediction").text("");
 			});
 			
 			$("#predict-button").click(function(event){
@@ -144,8 +106,7 @@ $("#predict-button").hide();
 			console.log(message);
 			
 			$.post("http://localhost:5000",JSON.stringify(message),function(response){
-			$("#1-prediction").text(response.prediction.dog);
-			$("#2-prediction").text(response.prediction.cat);
+			$("#1-prediction").text(response.prediction.person);
 			console.log(response);
 			});
 			});
