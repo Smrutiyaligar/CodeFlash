@@ -28,7 +28,7 @@ app=Flask(__name__)
 
 def get_model():
     global classifier,graph
-    classifier=load_model('games.h5')
+    classifier=load_model('sketch.h5')
     print("loaded")
     graph = tf.get_default_graph()
     
@@ -54,8 +54,8 @@ def predict():
     
         response={
             'prediction': {
-                'dog':prediction,
-                'cat':prediction
+                'celeb':prediction,
+                
                 
             }
     }
