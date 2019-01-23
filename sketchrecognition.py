@@ -20,6 +20,10 @@ classifier.add(MaxPooling2D(pool_size = (2, 2)))
 classifier.add(Conv2D(32,(3,3),activation='relu'))
 classifier.add(MaxPooling2D(pool_size=(2,2)))
 
+classifier.add(Conv2D(32,(3,3),activation='relu'))
+classifier.add(MaxPooling2D(pool_size=(2,2)))
+
+
 #flatten it
 classifier.add(Flatten())
 
@@ -57,7 +61,19 @@ testing_set=testing_data.flow_from_directory('dataset/testing',
                                              )
 classifier.fit_generator(training_set,
                          steps_per_epoch=100,
-                         epochs=25,
+                         epochs=50,
                          validation_data=testing_set,
-                         validation_steps=2000)
+                         validation_steps=2112)
+classifier.summary()
 
+from keras.models import load_model
+
+model.save('my_model.h5') 
+
+from keras.preprocessing import image
+test_image = image.load_img('C:/Users/harip/Desktop/ben.jpg', target_size = (64, 64))
+test_image = image.img_to_array(test_image)
+test_image = np.expand_dims(test_image, axis = 0)
+result = classifier.predict_classes(test_image)
+print(result)
+training_set.class_indices
