@@ -3,7 +3,7 @@
 <style>
 body {
 background-image:url("wanted.jpeg");
-background-repeat:no-repeat;
+background-position:center;
 }
 #predict-button {
  background-color: white; 
@@ -60,7 +60,7 @@ margin-left:80px;
   color: white;
 }
 p{
-color:white;
+color:red;
 }
 
 
@@ -81,8 +81,8 @@ $("#predict-button").hide();
 	<input id="image-selector" type="file">
 	<div id="smr"><button id="predict-button">Predict</button> </div>
 	<p>Predictions</p>
-	<p>1: <span id="1-prediction"></span></p>
-	<p>2: <span id="2-prediction"></span></p>
+	<p><span id="1-prediction"></span></p>
+	
 	<img id="selected-image" src=""/>
 	</div>
 	
@@ -113,3 +113,4 @@ $("#predict-button").hide();
 			</script>
 			</html>
 			
+	
