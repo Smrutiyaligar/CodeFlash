@@ -60,20 +60,12 @@ testing_set=testing_data.flow_from_directory('dataset/testing',
                                              class_mode='categorical',
                                              )
 classifier.fit_generator(training_set,
-                         steps_per_epoch=100,
+                         steps_per_epoch=120,
                          epochs=50,
                          validation_data=testing_set,
-                         validation_steps=2112)
+                         validation_steps=991)
 classifier.summary()
 
 from keras.models import load_model
 
-model.save('my_model.h5') 
-
-from keras.preprocessing import image
-test_image = image.load_img('C:/Users/harip/Desktop/ben.jpg', target_size = (64, 64))
-test_image = image.img_to_array(test_image)
-test_image = np.expand_dims(test_image, axis = 0)
-result = classifier.predict_classes(test_image)
-print(result)
-training_set.class_indices
+classifier.save('my_model.h5') 
